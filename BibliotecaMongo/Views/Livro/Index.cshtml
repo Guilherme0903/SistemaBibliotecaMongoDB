@@ -1,0 +1,35 @@
+@model List<BibliotecaMongo.Models.Livro>
+
+<h1>Lista de Livros</h1>
+
+<a asp-action="Create">+ Novo Livro</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Ano</th>
+            <th>Gênero</th>
+            <th>Exemplares</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var livro in Model)
+        {
+            <tr>
+                <td>@livro.Titulo</td>
+                <td>@livro.Autor</td>
+                <td>@livro.Ano</td>
+                <td>@livro.Genero</td>
+                <td>@livro.Exemplares</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@livro.Id">Detalhes</a> |
+                    <a asp-action="Edit" asp-route-id="@livro.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@livro.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+@model BibliotecaMongo.Models.Livro
+
+<h2>Cadastrar Livro</h2>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Título</label>
+        <input asp-for="Titulo" />
+    </div>
+
+    <div>
+        <label>Autor</label>
+        <input asp-for="Autor" />
+    </div>
+
+    <div>
+        <label>Ano</label>
+        <input asp-for="Ano" type="number" />
+    </div>
+
+    <div>
+        <label>Gênero</label>
+        <input asp-for="Genero" />
+    </div>
+
+    <div>
+        <label>Exemplares</label>
+        <input asp-for="Exemplares" type="number" />
+    </div>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a asp-action="Index">Voltar</a>

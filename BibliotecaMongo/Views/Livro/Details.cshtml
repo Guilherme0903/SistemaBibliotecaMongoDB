@@ -1,0 +1,13 @@
+@model BibliotecaMongo.Models.Livro
+
+<h2>Detalhes do Livro</h2>
+
+<div>
+    <p><strong>Título:</strong> @Model.Titulo</p>
+    <p><strong>Autor:</strong> @Model.Autor</p>
+    <p><strong>Ano:</strong> @Model.Ano</p>
+    <p><strong>Gênero:</strong> @Model.Genero</p>
+    <p><strong>Exemplares:</strong> @Model.Exemplares</p>
+</div>
+
+<a asp-action="Index">Voltar</a>

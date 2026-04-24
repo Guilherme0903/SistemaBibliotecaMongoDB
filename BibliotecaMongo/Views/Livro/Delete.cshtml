@@ -1,0 +1,19 @@
+@model BibliotecaMongo.Models.Livro
+
+<h2>Excluir Livro</h2>
+
+<h3>Tem certeza que deseja excluir este livro?</h3>
+
+<div>
+    <p><strong>Título:</strong> @Model.Titulo</p>
+    <p><strong>Autor:</strong> @Model.Autor</p>
+    <p><strong>Ano:</strong> @Model.Ano</p>
+    <p><strong>Gênero:</strong> @Model.Genero</p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Excluir</button>
+</form>
+
+<a asp-action="Index">Cancelar</a>

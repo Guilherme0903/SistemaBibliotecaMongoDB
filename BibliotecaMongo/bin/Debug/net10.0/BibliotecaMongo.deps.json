@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v10.0": {
       "BibliotecaMongo/1.0.0": {
         "dependencies": {
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "10.0.2"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "10.0.2",
+          "MongoDB.Driver": "3.8.0"
         },
         "runtime": {
           "BibliotecaMongo.dll": {}
+        }
+      },
+      "DnsClient/1.6.1": {
+        "runtime": {
+          "lib/net5.0/DnsClient.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
         }
       },
       "Humanizer/2.14.1": {
@@ -1360,6 +1369,29 @@
           }
         }
       },
+      "MongoDB.Bson/3.8.0": {
+        "runtime": {
+          "lib/net6.0/MongoDB.Bson.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "MongoDB.Driver/3.8.0": {
+        "dependencies": {
+          "DnsClient": "1.6.1",
+          "MongoDB.Bson": "3.8.0",
+          "SharpCompress": "0.30.1",
+          "Snappier": "1.0.0",
+          "ZstdSharp.Port": "0.7.3"
+        },
+        "runtime": {
+          "lib/net6.0/MongoDB.Driver.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
       "Mono.TextTemplating/3.0.0": {
         "dependencies": {
           "System.CodeDom": "6.0.0"
@@ -1478,6 +1510,22 @@
           }
         }
       },
+      "SharpCompress/0.30.1": {
+        "runtime": {
+          "lib/net5.0/SharpCompress.dll": {
+            "assemblyVersion": "0.30.1.0",
+            "fileVersion": "0.30.1.0"
+          }
+        }
+      },
+      "Snappier/1.0.0": {
+        "runtime": {
+          "lib/net5.0/Snappier.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.CodeDom/6.0.0": {
         "runtime": {
           "lib/net6.0/System.CodeDom.dll": {
@@ -1572,6 +1620,14 @@
             "fileVersion": "9.0.625.26613"
           }
         }
+      },
+      "ZstdSharp.Port/0.7.3": {
+        "runtime": {
+          "lib/net7.0/ZstdSharp.dll": {
+            "assemblyVersion": "0.7.3.0",
+            "fileVersion": "0.7.3.0"
+          }
+        }
       }
     }
   },
@@ -1580,6 +1636,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DnsClient/1.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4H/f2uYJOZ+YObZjpY9ABrKZI+JNw3uizp6oMzTXwDw6F+2qIPhpRl/1t68O/6e98+vqNiYGu+lswmwdYUy3gg==",
+      "path": "dnsclient/1.6.1",
+      "hashPath": "dnsclient.1.6.1.nupkg.sha512"
     },
     "Humanizer/2.14.1": {
       "type": "package",
@@ -2134,6 +2197,20 @@
       "path": "microsoft.visualstudio.web.codegenerators.mvc/10.0.2",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.10.0.2.nupkg.sha512"
     },
+    "MongoDB.Bson/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HeiOJUylam5nIB7b1EfzlnJbf6A9te79WO6CtsKfp8M/2EeL4SoSQFjmUpJ6/vvuaNKGENXMaX9oUJp9KpHlqw==",
+      "path": "mongodb.bson/3.8.0",
+      "hashPath": "mongodb.bson.3.8.0.nupkg.sha512"
+    },
+    "MongoDB.Driver/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BQ6bTaZCuSThmxS4vXu71a1jFGNMht2/+rjx2Uaw3AweIqRKFbPuyFoVsDnoLN935tvdC5OxwwAqrMY9eWBUng==",
+      "path": "mongodb.driver/3.8.0",
+      "hashPath": "mongodb.driver.3.8.0.nupkg.sha512"
+    },
     "Mono.TextTemplating/3.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2211,6 +2288,20 @@
       "path": "nuget.versioning/6.12.1",
       "hashPath": "nuget.versioning.6.12.1.nupkg.sha512"
     },
+    "SharpCompress/0.30.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XqD4TpfyYGa7QTPzaGlMVbcecKnXy4YmYLDWrU+JIj7IuRNl7DH2END+Ll7ekWIY8o3dAMWLFDE1xdhfIWD1nw==",
+      "path": "sharpcompress/0.30.1",
+      "hashPath": "sharpcompress.0.30.1.nupkg.sha512"
+    },
+    "Snappier/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rFtK2KEI9hIe8gtx3a0YDXdHOpedIf9wYCEYtBEmtlyiWVX3XlCNV03JrmmAi/Cdfn7dxK+k0sjjcLv4fpHnqA==",
+      "path": "snappier/1.0.0",
+      "hashPath": "snappier.1.0.0.nupkg.sha512"
+    },
     "System.CodeDom/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -2280,6 +2371,13 @@
       "sha512": "sha512-yErfw/3pZkJE/VKza/Cm5idTpIKOy/vsmVi59Ta5SruPVtubzxb8CtnE8tyUpzs5pr0Y28GUFfSVzAhCLN3F/Q==",
       "path": "system.security.cryptography.protecteddata/9.0.6",
       "hashPath": "system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
+    },
+    "ZstdSharp.Port/0.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
+      "path": "zstdsharp.port/0.7.3",
+      "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
     }
   }
 }
