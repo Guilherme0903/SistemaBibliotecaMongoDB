@@ -1,19 +1,46 @@
 @model BibliotecaMongo.Models.Livro
 
-<h2>Excluir Livro</h2>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-<h3>Tem certeza que deseja excluir este livro?</h3>
+<div class="container mt-4">
+    <div class="card shadow-sm border-danger">
+        <div class="card-body">
 
-<div>
-    <p><strong>Título:</strong> @Model.Titulo</p>
-    <p><strong>Autor:</strong> @Model.Autor</p>
-    <p><strong>Ano:</strong> @Model.Ano</p>
-    <p><strong>Gênero:</strong> @Model.Genero</p>
+            <h3 class="mb-3 text-danger"> Excluir Livro</h3>
+
+            <p class="mb-4">Tem certeza que deseja excluir este livro?</p>
+
+            <div class="mb-3">
+                <strong>Título:</strong>
+                <p class="mb-1">@Model.Titulo</p>
+            </div>
+
+            <div class="mb-3">
+                <strong>Autor:</strong>
+                <p class="mb-1">@Model.Autor</p>
+            </div>
+
+            <div class="mb-3">
+                <strong>Ano:</strong>
+                <p class="mb-1">@Model.Ano</p>
+            </div>
+
+            <div class="mb-3">
+                <strong>Gênero:</strong>
+                <p class="mb-1">@Model.Genero</p>
+            </div>
+
+            <hr />
+
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
 </div>
-
-<form asp-action="Delete" method="post">
-    <input type="hidden" asp-for="Id" />
-    <button type="submit">Excluir</button>
-</form>
-
-<a asp-action="Index">Cancelar</a>
