@@ -67,7 +67,12 @@ namespace BibliotecaMongo.Controllers
         {
             try
             {
+                var livroOriginal = _livros.Find(l => l.Id == id).FirstOrDefault();
+
+                livroAtualizado.Emprestimos = livroOriginal.Emprestimos;
+
                 _livros.ReplaceOne(l => l.Id == id, livroAtualizado);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -98,5 +103,42 @@ namespace BibliotecaMongo.Controllers
                 return View(livro);
             }
         }
+
+
+        [HttpPost]
+        public ActionResult Emprestar(string id, string nomePessoa)
+        {
+            var livro = _livros.Find(l => l.Id == id).FirstOrDefault();
+
+            if (livro != null && livro.Exemplares > 0)
+            {
+                if (livro.Emprestimos == null)
+                    livro.Emprestimos = new List<string>();
+
+                livro.Emprestimos.Add(nomePessoa);
+                livro.Exemplares--;
+
+                _livros.ReplaceOne(l => l.Id == id, livro);
+            }
+
+            return RedirectToAction("Details", new { id });
+        }
+        [HttpPost]
+        public ActionResult Devolver(string id, string nomePessoa)
+        {
+            var livro = _livros.Find(l => l.Id == id).FirstOrDefault();
+
+            if (livro != null && livro.Emprestimos != null)
+            {
+                livro.Emprestimos.Remove(nomePessoa);
+                livro.Exemplares++;
+
+                _livros.ReplaceOne(l => l.Id == id, livro);
+            }
+
+            return RedirectToAction("Details", new { id });
+        }
     }
+
+
 }

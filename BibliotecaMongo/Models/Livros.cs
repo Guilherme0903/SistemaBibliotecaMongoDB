@@ -12,5 +12,5 @@ public class Livro
     public int Ano { get; set; }
     public string Genero { get; set; }
     public int Exemplares { get; set; }
-    public List<string> Emprestimos { get; set; }
+    public List<string> Emprestimos { get; set; } = new List<string>();
 }
