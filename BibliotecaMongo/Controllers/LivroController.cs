@@ -1,7 +1,5 @@
 using BibliotecaMongo.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis;
-using System.Linq;
 using MongoDB.Driver;
 
 namespace BibliotecaMongo.Controllers
@@ -14,83 +12,90 @@ namespace BibliotecaMongo.Controllers
         {
             var client = new MongoClient("mongodb://localhost:27017");
             var database = client.GetDatabase("BibliotecaDB");
-
             _livros = database.GetCollection<Livro>("Livros");
         }
-        
-        // GET: LivroController
+
+        // LISTAR
         public ActionResult Index()
         {
             var livros = _livros.Find(l => true).ToList();
             return View(livros);
         }
 
-        // GET: LivroController/Details/5
-        public ActionResult Details(int id)
+        // DETALHES
+        public ActionResult Details(string id)
         {
-            return View();
+            var livro = _livros.Find(l => l.Id == id).FirstOrDefault();
+            return View(livro);
         }
 
-        // GET: LivroController/Create
+        // TELA DE CRIAÇÃO
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: LivroController/Create
+        // CRIAR
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Livro livro)
         {
             try
             {
+                livro.Emprestimos = new List<string>();
+                _livros.InsertOne(livro);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(livro);
             }
         }
 
-        // GET: LivroController/Edit/5
-        public ActionResult Edit(int id)
+        // TELA DE EDIÇÃO
+        public ActionResult Edit(string id)
         {
-            return View();
+            var livro = _livros.Find(l => l.Id == id).FirstOrDefault();
+            return View(livro);
         }
 
-        // POST: LivroController/Edit/5
+        // EDITAR
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(string id, Livro livroAtualizado)
         {
             try
             {
+                _livros.ReplaceOne(l => l.Id == id, livroAtualizado);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(livroAtualizado);
             }
         }
 
-        // GET: LivroController/Delete/5
-        public ActionResult Delete(int id)
+        // TELA DE DELETE
+        public ActionResult Delete(string id)
         {
-            return View();
+            var livro = _livros.Find(l => l.Id == id).FirstOrDefault();
+            return View(livro);
         }
 
-        // POST: LivroController/Delete/5
+        // DELETAR
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(string id, Livro livro)
         {
             try
             {
+                _livros.DeleteOne(l => l.Id == id);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                return View(livro);
             }
         }
     }
