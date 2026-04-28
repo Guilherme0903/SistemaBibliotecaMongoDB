@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guilh\\Downloads\\biblio\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj": {}
+    "C:\\Users\\guilh\\Downloads\\bibliotecamongo\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guilh\\Downloads\\biblio\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj": {
+    "C:\\Users\\guilh\\Downloads\\bibliotecamongo\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guilh\\Downloads\\biblio\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj",
+        "projectUniqueName": "C:\\Users\\guilh\\Downloads\\bibliotecamongo\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj",
         "projectName": "BibliotecaMongo",
-        "projectPath": "C:\\Users\\guilh\\Downloads\\biblio\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj",
+        "projectPath": "C:\\Users\\guilh\\Downloads\\bibliotecamongo\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\BibliotecaMongo.csproj",
         "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guilh\\Downloads\\biblio\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\obj\\",
+        "outputPath": "C:\\Users\\guilh\\Downloads\\bibliotecamongo\\SistemaBibliotecaMongoDB\\BibliotecaMongo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config"
